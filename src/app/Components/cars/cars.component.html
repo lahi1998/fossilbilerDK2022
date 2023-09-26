@@ -1,0 +1,23 @@
+<h2>Car add</h2>
+<form [formGroup]="CarForm" (ngSubmit)="onSubmit()">
+    <div class="formGroup">
+        <label for="Model">Model: </label>
+        <input type="text" id="Model" formControlName="Model" placeholder="Model"><br><br>
+        <label for="Antal">Antal: </label>
+        <input type="number" id="Antal" formControlName="Antal" placeholder="Antal"><br><br>
+        <label for="AEndringAntal">Ændring Antal: </label>
+        <input type="number" id="AEndringAntal" formControlName="AEndringAntal" placeholder="Ændring Antal"><br><br>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+<!-- display car here -->
+<h2>Display Cars</h2>
+<ul>
+  <li *ngFor="let car of cars">
+    <strong>Model:</strong> {{ car.model }}<br>
+    <strong>Antal:</strong> {{ car.antal }}<br>
+    <strong>Ændring Antal:</strong> {{ car.aEndringAntal }}<br>
+    <hr>
+  </li>
+</ul>
